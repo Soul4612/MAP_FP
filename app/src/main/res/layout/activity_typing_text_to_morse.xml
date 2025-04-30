@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TypingTextToMorseActivity">
+
+    <ImageButton
+        android:id="@+id/ibtn_main2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#000000"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/ibtn_back_to_typing"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="218dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_main2"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_back_to_typing"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_timer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/timer" />
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2sp"
+            android:layout_weight="1"
+            android:text="00:00"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_enter_morse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="輸入密文"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_enter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageButton
+            android:id="@+id/ibtn_dict"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/good_good_see" />
+
+        <TextView
+            android:id="@+id/tv_essay_text"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="16sp"
+            android:text="Lorem ipsum dolor  sit amet consectetur."
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#FFC05B"
+        android:text="-"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_morse" />
+
+    <Button
+        android:id="@+id/btn_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#FFC05B"
+        android:text="."
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_long"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_morse" />
+
+    <ImageButton
+        android:id="@+id/ibtn_delete"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btn_short"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_enter"
+        app:srcCompat="@drawable/backspace" />
+
+    <ImageButton
+        android:id="@+id/ibtn_enter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@drawable/enter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
