@@ -3,12 +3,14 @@ package fcu.iecs.morselearning;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -66,6 +68,7 @@ public class TypingTextToMorseActivity extends AppCompatActivity {
             finish();
         });
 
+        ibtnDict.setOnClickListener(v -> showMorseDictDialog());
         // 啟動計時器
         startTimer();
     }
@@ -88,5 +91,17 @@ public class TypingTextToMorseActivity extends AppCompatActivity {
                 handler.postDelayed(this, 1000);
             }
         });
+    }
+
+    private void showMorseDictDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_dict, null);
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+
+        ImageButton closeBtn = view.findViewById(R.id.ibtn_close_dict);
+        closeBtn.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
     }
 }
