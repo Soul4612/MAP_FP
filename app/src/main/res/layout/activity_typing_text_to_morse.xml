@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".TypingTextToMorseActivity">
 
+    <TextView
+        android:id="@+id/tv_a1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="一次只能輸入一個字母(ㆆ_ㆆ)"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_short" />
+
     <ImageButton
         android:id="@+id/ibtn_main2"
         android:layout_width="50dp"
@@ -64,13 +75,14 @@
 
     <EditText
         android:id="@+id/et_enter_morse"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="輸入密文"
         android:inputType="text"
+        android:textSize="34sp"
         app:layout_constraintEnd_toStartOf="@+id/ibtn_enter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
@@ -79,7 +91,8 @@
         android:id="@+id/linearLayout2"
         android:layout_width="320dp"
         android:layout_height="320dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corner_gray"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,16 +102,20 @@
             android:id="@+id/ibtn_dict"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/good_good_see" />
+            app:srcCompat="@drawable/dict" />
 
         <TextView
-            android:id="@+id/tv_essay_text"
+            android:id="@+id/tv_essay_morse"
             android:layout_width="match_parent"
             android:layout_height="220dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16sp"
-            android:text="Lorem ipsum dolor  sit amet consectetur."
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:textSize="34sp" />
     </LinearLayout>
 
@@ -119,7 +136,7 @@
         android:id="@+id/btn_short"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="#FFC05B"
         android:text="."
@@ -138,14 +155,14 @@
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/btn_short"
         app:layout_constraintTop_toBottomOf="@+id/ibtn_enter"
-        app:srcCompat="@drawable/backspace" />
+        app:srcCompat="@drawable/delete" />
 
     <ImageButton
         android:id="@+id/ibtn_enter"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
         android:background="#00000000"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
