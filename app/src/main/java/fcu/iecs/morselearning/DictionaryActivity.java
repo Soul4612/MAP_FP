@@ -1,25 +1,25 @@
 package fcu.iecs.morselearning;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.gridlayout.widget.GridLayout;
 
-import fcu.iecs.morselearning.adapter.DictionaryAdapter;
 import fcu.iecs.morselearning.model.MorseCode;
 
 public class DictionaryActivity extends AppCompatActivity {
     private ImageView ivBack;
     private ImageView ivHome;
-    private RecyclerView rvLetter;
-    private RecyclerView rvNumber;
+    private GridLayout gridLetter;
+    private GridLayout gridNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,8 @@ public class DictionaryActivity extends AppCompatActivity {
 
         ivBack = findViewById(R.id.iv_back_dict);
         ivHome = findViewById(R.id.iv_home_dict);
-        rvLetter = findViewById(R.id.rv_letter);
-        rvNumber = findViewById(R.id.rv_number);
+        gridLetter = findViewById(R.id.grid_letter);
+        gridNumber = findViewById(R.id.grid_number);
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +51,24 @@ public class DictionaryActivity extends AppCompatActivity {
             }
         });
 
-        rvLetter.setLayoutManager(new GridLayoutManager(this, 2));
-        rvLetter.setAdapter(new DictionaryAdapter(MorseCode.letterList));
-        rvNumber.setLayoutManager(new GridLayoutManager(this, 2));
-        rvNumber.setAdapter(new DictionaryAdapter(MorseCode.numberList));
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        for (String letter : MorseCode.letterList) {
+            View itemView = inflater.inflate(R.layout.item_dictionary, gridLetter, false);
+            TextView tvCharacter = itemView.findViewById(R.id.tv_character);
+            TextView tvCode = itemView.findViewById(R.id.tv_code);
+            tvCharacter.setText(letter);
+            tvCode.setText(MorseCode.encode(letter));
+            gridLetter.addView(itemView);
+        }
+
+        for (String number : MorseCode.numberList) {
+            View itemView = inflater.inflate(R.layout.item_dictionary, gridNumber, false);
+            TextView tvCharacter = itemView.findViewById(R.id.tv_character);
+            TextView tvCode = itemView.findViewById(R.id.tv_code);
+            tvCharacter.setText(number);
+            tvCode.setText(MorseCode.encode(number));
+            gridNumber.addView(itemView);
+        }
     }
 }
