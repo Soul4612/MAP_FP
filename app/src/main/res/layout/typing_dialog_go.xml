@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#6AAF1D"
+        android:backgroundTint="#8BC34A"
         android:elevation="4dp"
         android:paddingStart="24dp"
         android:paddingTop="8dp"

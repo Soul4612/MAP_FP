@@ -69,7 +69,6 @@ public class TypingTextToMorseActivity extends AppCompatActivity {
         ibtnDelete = findViewById(R.id.ibtn_delete);
 
         ibtnBackToTyping.setOnClickListener(v -> {
-            startActivity(new Intent(this, TypingActivity.class));
             finish();
         });
 

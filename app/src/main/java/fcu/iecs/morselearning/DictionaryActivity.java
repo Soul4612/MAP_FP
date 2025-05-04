@@ -1,6 +1,5 @@
 package fcu.iecs.morselearning;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,10 +9,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import fcu.iecs.morselearning.adapter.DictionaryAdapter;
+import fcu.iecs.morselearning.model.MorseCode;
 
 public class DictionaryActivity extends AppCompatActivity {
-    private ImageView iv_back;
-    private ImageView iv_home;
+    private ImageView ivBack;
+    private ImageView ivHome;
+    private RecyclerView rvLetter;
+    private RecyclerView rvNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +32,28 @@ public class DictionaryActivity extends AppCompatActivity {
             return insets;
         });
 
-        iv_back = findViewById(R.id.iv_back);
-        iv_home = findViewById(R.id.iv_home);
+        ivBack = findViewById(R.id.iv_back_dict);
+        ivHome = findViewById(R.id.iv_home_dict);
+        rvLetter = findViewById(R.id.rv_letter);
+        rvNumber = findViewById(R.id.rv_number);
 
-        iv_back.setOnClickListener(new View.OnClickListener() {
+        ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        iv_home.setOnClickListener(new View.OnClickListener() {
+        ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
+        rvLetter.setLayoutManager(new GridLayoutManager(this, 2));
+        rvLetter.setAdapter(new DictionaryAdapter(MorseCode.letterList));
+        rvNumber.setLayoutManager(new GridLayoutManager(this, 2));
+        rvNumber.setAdapter(new DictionaryAdapter(MorseCode.numberList));
     }
 }

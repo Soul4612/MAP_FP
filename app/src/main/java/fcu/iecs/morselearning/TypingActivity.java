@@ -36,14 +36,10 @@ public class TypingActivity extends AppCompatActivity {
         btnMorseToText = findViewById(R.id.btn_morse_to_text);
 
         ibtnBackToMain.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
             finish();
         });
 
         ibtnMain.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
             finish();
         });
 

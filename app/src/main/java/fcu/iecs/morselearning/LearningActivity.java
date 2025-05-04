@@ -1,6 +1,8 @@
 package fcu.iecs.morselearning;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class LearningActivity extends AppCompatActivity {
+    private ImageView ivBack;
+    private ImageView ivHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,23 @@ public class LearningActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        
+        ivBack = findViewById(R.id.iv_back_learning);
+        ivHome = findViewById(R.id.iv_home_learning);
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
     }
 }

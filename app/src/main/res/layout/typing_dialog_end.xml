@@ -38,7 +38,7 @@
             android:id="@+id/btn_back_to_typing"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#93DF10"
+            android:backgroundTint="#8BC34A"
             android:text="回到快打練習"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -48,7 +48,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="#93DF10"
+            android:backgroundTint="#8BC34A"
             android:text="回到首頁"
             android:textColor="#000000"
             android:textSize="16sp" />

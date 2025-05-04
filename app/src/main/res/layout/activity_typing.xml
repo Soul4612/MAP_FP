@@ -15,7 +15,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="64dp"
-        android:backgroundTint="#BAD94D"
+        android:backgroundTint="#8BC34A"
         android:text="明轉密"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -31,7 +31,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="64dp"
-        android:backgroundTint="#BAD94D"
+        android:backgroundTint="#8BC34A"
         android:text="密轉明"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -43,15 +43,15 @@
         android:id="@+id/tv_typing_title"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_corner_green"
         android:text="快打練習"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibtn_back_to_main"
         app:layout_constraintEnd_toStartOf="@+id/ibtn_main"
         app:layout_constraintStart_toEndOf="@+id/ibtn_back_to_main"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/ibtn_back_to_main" />
 
     <ImageButton
         android:id="@+id/ibtn_back_to_main"

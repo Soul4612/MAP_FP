@@ -64,7 +64,6 @@ public class TypingMorseToTextActivity extends AppCompatActivity {
         ibtnEnter2 = findViewById(R.id.ibtn_enter2);
 
         ibtnBackToTyping2.setOnClickListener(v -> {
-            startActivity(new Intent(this, TypingActivity.class));
             finish();
         });
 
