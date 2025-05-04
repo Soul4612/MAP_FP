@@ -22,7 +22,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_height="420dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_corner_gray"
         android:orientation="vertical"
@@ -43,7 +43,7 @@
         <TextView
             android:id="@+id/tv_essay_morse"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="320dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16sp"
             android:layout_marginRight="16dp"
